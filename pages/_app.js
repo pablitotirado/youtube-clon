@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { GlobalStyle } from '../global-styles';
 import store from '../store';
 
-
 const App = ({ Component, pageProps }) => {
 
   return (
@@ -17,6 +16,14 @@ const App = ({ Component, pageProps }) => {
           integrity='sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU='
           crossOrigin='anonymous'
         />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap'
+          rel='stylesheet'
+        ></link>
+        <link
+          rel='stylesheet'
+          href='myProjects/webProject/icofont/css/icofont.min.css'
+        ></link>
         <title>Youtube</title>
       </Head>
       <Component {...pageProps} />
