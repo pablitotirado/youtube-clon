@@ -1,6 +1,6 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 function reducerPrueba(state = {}, action) {
   switch (action.type) {
@@ -9,7 +9,7 @@ function reducerPrueba(state = {}, action) {
   }
 }
 const reducer = combineReducers({
-  reducerPrueba,
+  reducerPrueba
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
