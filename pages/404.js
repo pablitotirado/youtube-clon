@@ -40,6 +40,6 @@ const Error = () => {
       </ErrorContainer>
     </ScreenSizer>
   );
-};
+}
 
 export default Error;

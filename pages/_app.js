@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { GlobalStyle } from '../global-styles';
 import store from '../store';
 
 const App = ({ Component, pageProps }) => {
+
   return (
     <Provider store={store}>
       <GlobalStyle />

@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { InitApp, Login } from '../actions/actions-auth';
 
 const ScreenSizer = styled.div`
   width: 100%;
@@ -49,20 +49,22 @@ const Button = styled.a`
 
 export default function Home() {
   const history = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const validationAuth = () => {
-      const token =
-        history.asPath !== '/'
-          ? history.asPath.slice(15, history.asPath.length - 80)
-          : false;
-      token && localStorage.setItem('access_token', JSON.stringify(token));
-    };
-    validationAuth();
-
-    localStorage.getItem('access_token')
-      ? history.push('/home')
-      : history.push('/');
+    const initApp = () => dispatch(InitApp());
+    const login = (token) => dispatch(Login(token));
+    if (localStorage.getItem('access_token')) {
+      initApp();
+      history.push('/home');
+    }
+    if (history.asPath !== '/') {
+      const token = history.asPath.slice(15, history.asPath.length - 80);
+      login(token);
+      history.push('/home');
+    } else {
+      history.push('/');
+    }
   }, []);
 
   return (
@@ -80,3 +82,16 @@ export default function Home() {
     </ScreenSizer>
   );
 }
+
+// const validationAuth = () => {
+//   const token =
+//     history.asPath !== '/'
+//       ? history.asPath.slice(15, history.asPath.length - 80)
+//       : false;
+//   token && localStorage.setItem('access_token', JSON.stringify(token));
+// };
+// validationAuth();
+
+// localStorage.getItem('access_token')
+//   ? history.push('/home')
+//   : history.push('/');

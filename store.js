@@ -2,14 +2,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
-function reducerPrueba(state = {}, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+//reducers
+import reducerAuth from './reducers/reducerAuth';
+
 const reducer = combineReducers({
-  reducerPrueba
+  auth: reducerAuth
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
