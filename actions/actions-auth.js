@@ -14,7 +14,7 @@ export const InitApp = () => (dispatch) =>
     }
   });
 
-export const Login = (token) => (dispatch) => {
+export const LoginAction = (token) => (dispatch) => {
   dispatch({
     type: LOGIN_INIT,
     payload: {

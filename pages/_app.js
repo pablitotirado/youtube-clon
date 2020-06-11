@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { GlobalStyle } from '../global-styles';
+import NavWrapper from '../components/nav-wrapper';
 import store from '../store';
 
 const App = ({ Component, pageProps }) => {
-
+  const history = useRouter();
+  console.log(history);
   return (
     <Provider store={store}>
       <GlobalStyle />
@@ -26,7 +29,13 @@ const App = ({ Component, pageProps }) => {
         ></link>
         <title>Youtube</title>
       </Head>
-      <Component {...pageProps} />
+      {history.pathname === '/' ? (
+        <Component {...pageProps} />
+      ) : (
+        <NavWrapper>
+          <Component {...pageProps} />
+        </NavWrapper>
+      )}
     </Provider>
   );
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { InitApp, Login } from '../actions/actions-auth';
+import { InitApp, LoginAction } from '../actions/actions-auth';
 
 const ScreenSizer = styled.div`
   width: 100%;
@@ -47,13 +47,13 @@ const Button = styled.a`
   padding: 1rem;
 `;
 
-export default function Home() {
+export default function Login() {
   const history = useRouter();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const initApp = () => dispatch(InitApp());
-    const login = (token) => dispatch(Login(token));
+    const login = (token) => dispatch(LoginAction(token));
     if (localStorage.getItem('access_token')) {
       initApp();
       history.push('/home');
@@ -82,16 +82,3 @@ export default function Home() {
     </ScreenSizer>
   );
 }
-
-// const validationAuth = () => {
-//   const token =
-//     history.asPath !== '/'
-//       ? history.asPath.slice(15, history.asPath.length - 80)
-//       : false;
-//   token && localStorage.setItem('access_token', JSON.stringify(token));
-// };
-// validationAuth();
-
-// localStorage.getItem('access_token')
-//   ? history.push('/home')
-//   : history.push('/');
