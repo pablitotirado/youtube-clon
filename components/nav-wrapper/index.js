@@ -1,39 +1,93 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//Component
+import Logo from '../logo';
+import InputSearch from '../input-search';
+
 const NavWrapperStyled = styled.div`
   width: 100%;
   min-height: 100vh;
-  border: 1px solid red;
   display: grid;
   grid-template-columns: repeat(6, 16.66%);
   grid-template-rows: repeat(10, 10%);
+
 `;
 const BoxTopNavStyled = styled.div`
   width: 100%;
   grid-column: 1 / 11;
   grid-row: 1 / 2;
-  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 min(0.5rem);
 
-  h1 {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  .left {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .center {
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+  }
+  .right {
+    display: none;
+    flex-basis: 20%;
+  }
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+
+    .left {
+      
+    }
+    .center {
+      flex-basis: 50%;
+    }
+    .right {
+      display: initial;
+    }
   }
 `;
 
 const BoxSidebarStyled = styled.div`
-  border: 1px solid blue;
+  display: none;
   grid-column: 1 / 2;
   grid-row: 2 / 11;
   height: 100%;
+  background: gray;
+  @media (min-width: 768px) {
+    display: initial;
+  }
 `;
 
 const BoxChildrenStyled = styled.div`
-  border: 1px solid orange;
-  grid-column: 2 / 11;
+  grid-column: 1 / 11;
   grid-row: 2 / 11;
+  background: #e5e5e5;
+
+  @media (min-width: 768px) {
+    grid-column: 2 / 11;
+  }
+`;
+
+const OptionsTopNav = styled.button`
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  hr {
+    margin: 0.2rem 0;
+    width: 1.1rem;
+    border-color: #858585;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 1rem;
+  }
 `;
 
 const NavWrapper = ({ children }) => {
@@ -41,11 +95,20 @@ const NavWrapper = ({ children }) => {
     <>
       <NavWrapperStyled>
         <BoxTopNavStyled>
-          <h1>hola</h1>
+          <div className='left'>
+            <OptionsTopNav>
+              <hr />
+              <hr />
+              <hr />
+            </OptionsTopNav>
+            <Logo />
+          </div>
+          <div className='center'>
+            <InputSearch />
+          </div>
+          <div className='right'></div>
         </BoxTopNavStyled>
-        <BoxSidebarStyled>
-          <h1>hola</h1>
-        </BoxSidebarStyled>
+        <BoxSidebarStyled></BoxSidebarStyled>
         <BoxChildrenStyled>{children}</BoxChildrenStyled>
       </NavWrapperStyled>
     </>
