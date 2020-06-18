@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 //Component
 import Logo from './logo';
 import InputSearch from '../input-search';
+import SearchI from './icon-search';
 
 const NavWrapperStyled = styled.div`
   width: 100%;
@@ -22,12 +23,12 @@ const BoxTopNavStyled = styled.div`
 
   .left {
     flex-basis: 20%;
-    display: flex;
+    display: ${(props) => (props.mobile ? 'none' : 'flex')};
     justify-content: flex-start;
     align-items: center;
   }
   .center {
-    flex-basis: 70%;
+    flex-basis: ${(props) => (props.mobile ? '100%' : '70%')};
     display: flex;
     align-items: center;
   }
@@ -76,11 +77,12 @@ const OptionsTopNav = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
+  margin-right: 0.2rem;
 
   hr {
     margin: 0.2rem 0;
     width: 1.1rem;
-    border-color: #858585;
+    border: 1px solid #a39ba0;
   }
 
   @media (min-width: 768px) {
@@ -88,25 +90,51 @@ const OptionsTopNav = styled.button`
   }
 `;
 
-const NavWrapper = ({ children }) => (
-  <NavWrapperStyled>
-    <BoxTopNavStyled>
-      <div className='left'>
-        <OptionsTopNav>
-          <hr />
-          <hr />
-          <hr />
-        </OptionsTopNav>
-        <Logo />
-      </div>
-      <div className='center'>
-        <InputSearch />
-      </div>
-      <div className='right'></div>
-    </BoxTopNavStyled>
-    <BoxSidebarStyled></BoxSidebarStyled>
-    <BoxChildrenStyled>{children}</BoxChildrenStyled>
-  </NavWrapperStyled>
-);
+const IconSearch = styled.div`
+  padding: 0.5rem 0.6rem 0.4rem;
+  fill: #a39ba0;
+  width: 2.4rem;
+  border-radius: 50%;
+  margin: auto 0 auto auto;
+  cursor: pointer;
+  display: ${(props) => (props.mobile ? 'none' : 'initial')};
 
+  &:hover {
+    background-color: #e5e5e5;
+  }
+`;
+
+const NavWrapper = ({ children }) => {
+  const [topNavOpen, setTopNavOpen] = useState(false);
+  return (
+    <NavWrapperStyled>
+      <BoxTopNavStyled mobile={topNavOpen}>
+        <div className='left'>
+          <OptionsTopNav>
+            <hr />
+            <hr />
+            <hr />
+          </OptionsTopNav>
+          <Logo />
+        </div>
+        <div className='center'>
+          <InputSearch
+            topNavOpen={topNavOpen}
+            setTopNavOpen={setTopNavOpen}
+            mounted={topNavOpen}
+          />
+          <IconSearch
+            mobile={topNavOpen}
+            onClick={() => setTopNavOpen(!topNavOpen)}
+          >
+            <SearchI />
+          </IconSearch>
+        </div>
+        <div className='right'></div>
+      </BoxTopNavStyled>
+      <BoxSidebarStyled></BoxSidebarStyled>
+      <BoxChildrenStyled>{children}</BoxChildrenStyled>
+    </NavWrapperStyled>
+  );
+};
 export default NavWrapper;

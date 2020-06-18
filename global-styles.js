@@ -9,3 +9,4 @@ export const GlobalStyle = createGlobalStyle`
 	 box-sizing: inherit;
 	}
 `;
+
