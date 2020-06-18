@@ -7,8 +7,7 @@ import Http from '../api/client-Http';
 
 const search = new Http();
 
-export const setSearch = (terms) => {
-  return (dispatch) => {
+export const setSearch = (terms) => (dispatch) => {
     dispatch({
       type: SEARCH_INIT,
       payload: {
@@ -33,4 +32,3 @@ export const setSearch = (terms) => {
         })
     }
   };
-};
