@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //Component
-import Logo from '../logo';
+import Logo from './logo';
 import InputSearch from '../input-search';
 
 const NavWrapperStyled = styled.div`
@@ -11,7 +11,6 @@ const NavWrapperStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 16.66%);
   grid-template-rows: repeat(10, 10%);
-
 `;
 const BoxTopNavStyled = styled.div`
   width: 100%;
@@ -41,7 +40,6 @@ const BoxTopNavStyled = styled.div`
     justify-content: space-between;
 
     .left {
-      
     }
     .center {
       flex-basis: 50%;
@@ -90,29 +88,25 @@ const OptionsTopNav = styled.button`
   }
 `;
 
-const NavWrapper = ({ children }) => {
-  return (
-    <>
-      <NavWrapperStyled>
-        <BoxTopNavStyled>
-          <div className='left'>
-            <OptionsTopNav>
-              <hr />
-              <hr />
-              <hr />
-            </OptionsTopNav>
-            <Logo />
-          </div>
-          <div className='center'>
-            <InputSearch />
-          </div>
-          <div className='right'></div>
-        </BoxTopNavStyled>
-        <BoxSidebarStyled></BoxSidebarStyled>
-        <BoxChildrenStyled>{children}</BoxChildrenStyled>
-      </NavWrapperStyled>
-    </>
-  );
-};
+const NavWrapper = ({ children }) => (
+  <NavWrapperStyled>
+    <BoxTopNavStyled>
+      <div className='left'>
+        <OptionsTopNav>
+          <hr />
+          <hr />
+          <hr />
+        </OptionsTopNav>
+        <Logo />
+      </div>
+      <div className='center'>
+        <InputSearch />
+      </div>
+      <div className='right'></div>
+    </BoxTopNavStyled>
+    <BoxSidebarStyled></BoxSidebarStyled>
+    <BoxChildrenStyled>{children}</BoxChildrenStyled>
+  </NavWrapperStyled>
+);
 
 export default NavWrapper;

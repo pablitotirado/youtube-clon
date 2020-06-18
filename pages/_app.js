@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import React from 'react';
+import { useRouter, Router } from 'next/router';
 import { Provider } from 'react-redux';
+import Head from 'next/head';
 import { GlobalStyle } from '../global-styles';
 import NavWrapper from '../components/nav-wrapper';
 import store from '../store';
 
 const App = ({ Component, pageProps }) => {
   const history = useRouter();
-  console.log(history);
+
   return (
     <Provider store={store}>
       <GlobalStyle />
