@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SidebarOpen from './sidebar-open';
 
 //Component
 import Logo from './logo';
@@ -55,7 +56,7 @@ const BoxSidebarStyled = styled.div`
   grid-column: 1 / 2;
   grid-row: 2 / 11;
   height: 100%;
-  background: gray;
+  background: (var --white);
   @media (min-width: 768px) {
     display: initial;
   }
@@ -104,7 +105,9 @@ const NavWrapper = ({ children }) => (
       </div>
       <div className='right'></div>
     </BoxTopNavStyled>
-    <BoxSidebarStyled></BoxSidebarStyled>
+    <BoxSidebarStyled>
+      <SidebarOpen />
+    </BoxSidebarStyled>
     <BoxChildrenStyled>{children}</BoxChildrenStyled>
   </NavWrapperStyled>
 );
