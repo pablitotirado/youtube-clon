@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ArrowLeftStyled = styled.svg`
+  display: ${({ mobile }) => (mobile ? 'initial' : 'none')};
   width: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
@@ -12,10 +13,11 @@ const ArrowLeftStyled = styled.svg`
     background-color: #e5e5e5;
   }
 `;
-const ArrowLeft = ({ onClick }) => {
+const ArrowLeft = ({ onClick, mobile = false }) => {
   return (
     <>
       <ArrowLeftStyled
+        mobile={mobile}
         onClick={() => onClick()}
         version='1.1'
         id='Capa_1'

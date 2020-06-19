@@ -6,13 +6,14 @@ export const InputStyled = styled.input`
   border-top-left-radius: 3px;
   outline: none;
   width: 100%;
+  padding: 0 1rem;
 `;
 
 export const ButtonSearch = styled.button`
   position: relative;
   height: 100%;
   text-indent: -9999px;
-  border: 1px solid gray;
+  border: 1px solid #ccc;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
   outline: none;

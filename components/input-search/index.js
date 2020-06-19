@@ -12,7 +12,7 @@ const InputSearch = ({ mobile, onClick = null }) => {
   return (
     <>
       <BoxInputSearchStyled>
-        <ArrowLeft onClick={() => onClick()} />
+        <ArrowLeft mobile={mobile} onClick={() => onClick()} />
         <InputStyled placeholder='Buscar' />
         <ButtonSearch>
           Buscar <IconSearch src='/static/images/buscar.svg' />
