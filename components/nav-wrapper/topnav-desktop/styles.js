@@ -6,10 +6,9 @@ export const BoxTopNavDesktop = styled.div`
   grid-row: 1 / 2;
   display: none;
   justify-content: space-around;
-  padding: 0 min(0.5rem);
 
   .left {
-    flex-basis: 20%;
+    flex-basis: 25%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -20,8 +19,12 @@ export const BoxTopNavDesktop = styled.div`
     align-items: center;
   }
   .right {
-    display: initial;
-    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+
+    flex-basis: 25%;
   }
 
   @media (min-width: 768px) {

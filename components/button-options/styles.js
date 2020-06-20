@@ -6,7 +6,7 @@ export const ButtonOptionsStyled = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  margin-right: 0.2rem;
+  margin: 0 0.2rem 0.2rem 0;
   border-radius: 50%;
   padding: 0.6rem;
   display: flex;

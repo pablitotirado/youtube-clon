@@ -5,6 +5,7 @@ import SearchI from '../icon-search';
 import Logo from 'components/logo';
 import InputSearch from 'components/input-search';
 import ButtonOptions from 'components/button-options';
+import UserProfile from 'components/user-profile';
 
 const TopNavMobile = () => {
   const [searchMounted, setSearchMounted] = useState(false);
@@ -27,6 +28,7 @@ const TopNavMobile = () => {
                 <SearchI />
               </IconSearch>
             )}
+            <UserProfile />
           </div>
         </>
       )}

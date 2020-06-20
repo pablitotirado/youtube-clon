@@ -11,9 +11,12 @@ export const BoxTopNavMobile = styled.div`
   .left {
     display: flex;
     align-items: center;
+    flex-basis: 50%;
   }
   .right {
+    flex-basis: 20%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -25,7 +28,7 @@ export const BoxTopNavMobile = styled.div`
 export const IconSearch = styled.div`
   padding: 0.5rem 0.6rem 0.4rem;
   fill: #a39ba0;
-  width: 2.4rem;
+  width: 2.6rem;
   border-radius: 50%;
   cursor: pointer;
   display: ${(props) => (props.mobile ? 'none' : 'initial')};

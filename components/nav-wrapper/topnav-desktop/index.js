@@ -3,6 +3,7 @@ import { BoxTopNavDesktop } from './styles';
 import Logo from 'components/logo';
 import InputSearch from 'components/input-search';
 import ButtonOptions from 'components/button-options';
+import UserProfile from 'components/user-profile';
 
 const TopNavDesktop = () => {
   return (
@@ -12,9 +13,11 @@ const TopNavDesktop = () => {
         <Logo />
       </div>
       <div className='center'>
-        <InputSearch mobile={false} />
+        <InputSearch />
       </div>
-      <div className='right'></div>
+      <div className='right'>
+        <UserProfile />
+      </div>
     </BoxTopNavDesktop>
   );
 };

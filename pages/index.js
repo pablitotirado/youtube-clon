@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { InitApp, LoginAction } from '../actions/actions-auth';
 
@@ -55,15 +55,16 @@ export default function Login() {
     const initApp = () => dispatch(InitApp());
     const login = (token) => dispatch(LoginAction(token));
     if (localStorage.getItem('access_token')) {
+      Router.push('/home');
       initApp();
-      history.push('/home');
     }
     if (history.asPath !== '/') {
-      const token = history.asPath.slice(15, history.asPath.length - 80);
+      const token = window.location.hash.slice(14, history.asPath.length - 152);
       login(token);
-      history.push('/home');
-    } else {
-      history.push('/');
+      Router.push('/home');
+    }
+    if (history.asPath === '/' && !localStorage.getItem('access_token')) {
+      Router.push('/');
     }
   }, []);
 
@@ -75,7 +76,7 @@ export default function Login() {
           alt='youtubeclon logo'
         />
         <h1 className='title'>Please sign in</h1>
-        <Button href='https://accounts.google.com/o/oauth2/auth?client_id=409993691741-osl4cle99b42qqh49us39nkep8st0e4j.apps.googleusercontent.com&redirect_uri=http://localhost:3000&scope=https://www.googleapis.com/auth/youtube&response_type=token'>
+        <Button href='https://accounts.google.com/o/oauth2/auth?client_id=409993691741-osl4cle99b42qqh49us39nkep8st0e4j.apps.googleusercontent.com&redirect_uri=http://localhost:3000&scope=https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/userinfo.profile&response_type=token'>
           Login with Google
         </Button>
       </LoginContainer>

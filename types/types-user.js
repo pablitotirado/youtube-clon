@@ -1,0 +1,3 @@
+export const USER_INFO_INIT = "USER_INFO_INIT"
+export const USER_INFO_SUCCESS = "USER_INFO_SUCCESS"
+export const USER_INFO_ERROR = "USER_INFO_ERROR"
