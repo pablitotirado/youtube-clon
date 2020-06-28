@@ -17,6 +17,7 @@ export const ButtonSearch = styled.button`
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
   outline: none;
+  cursor: pointer;
 
   &:focus {
     border-color: #ccc;

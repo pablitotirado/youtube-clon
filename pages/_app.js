@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouter, Router } from 'next/router';
+import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { GlobalStyle } from '../global-styles';

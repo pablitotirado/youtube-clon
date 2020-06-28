@@ -7,7 +7,7 @@ import InputSearch from 'components/input-search';
 import ButtonOptions from 'components/button-options';
 import UserProfile from 'components/user-profile';
 
-const TopNavMobile = () => {
+const TopNavMobile = ({ message, mobile }) => {
   const [searchMounted, setSearchMounted] = useState(false);
   return (
     <BoxTopNavMobile>
@@ -19,7 +19,7 @@ const TopNavMobile = () => {
       ) : (
         <>
           <div className='left'>
-            <ButtonOptions />
+            <ButtonOptions open />
             <Logo />
           </div>
           <div className='right'>
@@ -36,4 +36,8 @@ const TopNavMobile = () => {
   );
 };
 
+TopNavMobile.defaultProps = {
+  message: 'hola mundo',
+  mobile: false
+};
 export default TopNavMobile;

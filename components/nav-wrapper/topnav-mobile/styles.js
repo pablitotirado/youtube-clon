@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BoxTopNavMobile = styled.div`
-  grid-column: 1 / 11;
+  grid-column: 1 / 22;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ export const BoxTopNavMobile = styled.div`
   .right {
     flex-basis: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 
@@ -32,7 +32,6 @@ export const IconSearch = styled.div`
   border-radius: 50%;
   cursor: pointer;
   display: ${(props) => (props.mobile ? 'none' : 'initial')};
-
   &:hover {
     background-color: #e5e5e5;
   }

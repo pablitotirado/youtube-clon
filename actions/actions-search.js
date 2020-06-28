@@ -1,34 +1,34 @@
 import {
-  SEARCH_INIT,
-  SEARCH_SUCCESS,
-  SEARCH_ERROR
+	SEARCH_INIT,
+	SEARCH_SUCCESS,
+	SEARCH_ERROR
 } from '../types/types-search';
-import Http from '../api/client-Http';
+import Http from 'api/client-http';
 
 const search = new Http();
 
-export const setSearch = (terms) => (dispatch) => {
-    dispatch({
-      type: SEARCH_INIT,
-      payload: {
-          loading: true,
-      }
-    })
-    try {
-        const response = await search.getSearch(terms)
-        dispatch({
-            type: SEARCH_SUCCESS,
-            payload: {
-                search: response,
-                loading: false
-            }
-        })
-    } catch (error) {
-        dispatch({
-            type: SEARCH_ERROR,
-            payload: {
-                error: true
-            }
-        })
-    }
-  };
+export const setSearch = (terms, token) => async (dispatch) => {
+	dispatch({
+		type: SEARCH_INIT,
+		payload: {
+			loading: true
+		}
+	});
+	try {
+        const response = await search.getSearch(terms, token);
+		dispatch({
+			type: SEARCH_SUCCESS,
+			payload: {
+				search: response,
+				loading: false
+			}
+		});
+	} catch (error) {
+		dispatch({
+			type: SEARCH_ERROR,
+			payload: {
+				error: true
+			}
+		});
+	}
+};

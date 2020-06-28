@@ -5,10 +5,12 @@ import thunk from 'redux-thunk';
 //reducers
 import reducerAuth from 'reducers/reducer-auth';
 import reducerUser from 'reducers/reducer-user';
+import reducerSearch from 'reducers/reducer-search';
 
 const reducer = combineReducers({
-  auth: reducerAuth,
-  userInfo: reducerUser
+	auth: reducerAuth,
+	userInfo: reducerUser,
+	search: reducerSearch
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));

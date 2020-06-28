@@ -1,30 +1,36 @@
 export default class Http {
-  query = 'https://www.googleapis.com/youtube/v3/';
-  queryUserInfo = 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json';
-  token;
-  requestOptions = {
-    Authorization: `Bearer ${this.token}`
-  };
+	query = 'https://www.googleapis.com/youtube/v3/';
+	queryUserInfo = 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json';
+	requestOptions = {
+		Authorization: `Bearer ${this.token}`
+	};
 
-  async getSearch(terms) {
-    const request = await fetch(
-      `${this.query}search?part=snippet&q=${terms}`,
-      this.requestOptions
-    );
-    const response = await request.json();
-    return response;
-  }
-
-  async getUserInfo(token) {
-    const request = await fetch(this.queryUserInfo, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-    const response = await request.json();
-    return response;
-  }
+	async getSearch(terms, token) {
+		const part = 'snippet';
+		const results = '30';
+		const language = 'es';
+		const request = await fetch(
+			`${this.query}search?part=${part}&q=${terms}&maxResults=${results}&relevanceLanguage=${language}`,
+			{
+				method: 'GET',
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
+			}
+		);
+		const response = await request.json();
+		return response;
+	}
+	async getUserInfo(token) {
+		const request = await fetch(this.queryUserInfo, {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		});
+		const response = await request.json();
+		return response;
+	}
 }
 
 //Get profile user from access token callback youtube data api

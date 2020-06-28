@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const BoxTopNavDesktop = styled.div`
   width: 100%;
-  grid-column: 1 / 11;
+  grid-column: 1 / 22;
   grid-row: 1 / 2;
   display: none;
   justify-content: space-around;
@@ -23,7 +23,6 @@ export const BoxTopNavDesktop = styled.div`
     align-items: center;
     justify-content: flex-end;
     padding-right: 1rem;
-
     flex-basis: 25%;
   }
 

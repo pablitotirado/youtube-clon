@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ButtonOptionsStyled } from './styles';
 
 const ButtonOptions = ({ click }) => (
-  <ButtonOptionsStyled>
+  <ButtonOptionsStyled onClick={click}>
     <hr />
     <hr />
     <hr />

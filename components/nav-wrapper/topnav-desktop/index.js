@@ -5,11 +5,11 @@ import InputSearch from 'components/input-search';
 import ButtonOptions from 'components/button-options';
 import UserProfile from 'components/user-profile';
 
-const TopNavDesktop = () => {
+const TopNavDesktop = ({ show }) => {
   return (
     <BoxTopNavDesktop>
       <div className='left'>
-        <ButtonOptions />
+        <ButtonOptions click={show} />
         <Logo />
       </div>
       <div className='center'>
