@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import Router from 'next/router';
+import { useDispatch } from 'react-redux';
 import {
 	InputStyled,
 	ButtonSearch,
@@ -23,7 +24,7 @@ const InputSearch = ({ mobile, onClick = null }) => {
 	const dispatch = useDispatch();
 
 	const getSearch = () => {
-		term && dispatch(setSearch(term, token));
+		term && dispatch(setSearch(term, token)) && Router.push('/search');
 	};
 
 	return (

@@ -19,7 +19,6 @@ const TopNavMobile = ({ message, mobile }) => {
       ) : (
         <>
           <div className='left'>
-            <ButtonOptions open />
             <Logo />
           </div>
           <div className='right'>

@@ -6,7 +6,7 @@ export const BoxTopNavMobile = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 min(0.5rem);
+  padding: .3rem min(0.5rem);
 
   .left {
     display: flex;

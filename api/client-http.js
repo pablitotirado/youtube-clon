@@ -7,7 +7,7 @@ export default class Http {
 
 	async getSearch(terms, token) {
 		const part = 'snippet';
-		const results = '30';
+		const results = '32';
 		const language = 'es';
 		const request = await fetch(
 			`${this.query}search?part=${part}&q=${terms}&maxResults=${results}&relevanceLanguage=${language}`,

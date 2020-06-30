@@ -9,7 +9,6 @@ const TopNavDesktop = ({ show }) => {
   return (
     <BoxTopNavDesktop>
       <div className='left'>
-        <ButtonOptions click={show} />
         <Logo />
       </div>
       <div className='center'>
