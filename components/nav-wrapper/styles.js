@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const NavWrapperStyled = styled.div`
-	width: 100%;
 	height: min-content;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(113px, 1fr));

@@ -15,7 +15,8 @@ export const setSearch = (terms, token) => async (dispatch) => {
 		}
 	});
 	try {
-        const response = await search.getSearch(terms, token);
+		const response = await search.getSearch(terms, token);
+		console.log(response);
 		dispatch({
 			type: SEARCH_SUCCESS,
 			payload: {
@@ -24,6 +25,10 @@ export const setSearch = (terms, token) => async (dispatch) => {
 			}
 		});
 	} catch (error) {
+		dispatch({
+			type: LOGOUT
+		});
+		Router.push('/');
 		dispatch({
 			type: SEARCH_ERROR,
 			payload: {

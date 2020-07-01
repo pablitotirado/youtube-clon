@@ -6,10 +6,10 @@ import CardChannel from 'components/card-channel';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-	padding: 0.1rem 1rem;
+	padding: 1rem 0;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	grid-template-rows: repeat(auto-fill, minmax(20rem, 25rem));
+	grid-template-rows: repeat(auto-fill, minmax(17rem, 19rem));
 	column-gap: 1rem;
 	row-gap: 1rem;
 `;
@@ -31,11 +31,11 @@ const Search = () => {
 								title={item.snippet.title}
 								description={item.snippet.description}
 								img={item.snippet.thumbnails.high.url}
+								channelTitle={item.snippet.channelTitle}
 							/>
 						);
 					}
 					if (item.id.kind.includes('youtube#channel')) {
-						console.log(item);
 						return (
 							<CardChannel
 								key={item.etag}
