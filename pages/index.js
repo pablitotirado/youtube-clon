@@ -68,10 +68,8 @@ export default function Login() {
 		}
 	}, []);
 
-	const location =
-		window.location.hostname === 'localhost'
-			? 'http://localhost:3000'
-			: 'https://youtube-clon.vercel.app';
+	const locationDeploy = 'https://youtube-clon.vercel.app';
+	const locationDev = 'http://localhost:3000';
 
 	return (
 		<ScreenSizer>
@@ -82,7 +80,7 @@ export default function Login() {
 				/>
 				<h1 className='title'>Please sign in</h1>
 				<Button
-					href={`https://accounts.google.com/o/oauth2/auth?client_id=409993691741-osl4cle99b42qqh49us39nkep8st0e4j.apps.googleusercontent.com&redirect_uri=${location}&scope=https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/userinfo.profile&response_type=token`}
+					href={`https://accounts.google.com/o/oauth2/auth?client_id=409993691741-osl4cle99b42qqh49us39nkep8st0e4j.apps.googleusercontent.com&redirect_uri=${locationDeploy}&scope=https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/userinfo.profile&response_type=token`}
 				>
 					Login with Google
 				</Button>
