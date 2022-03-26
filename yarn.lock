@@ -3783,9 +3783,9 @@ minimatch@^3.0.4:
     brace-expansion "^1.1.7"
 
 minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass-collect@^1.0.2:
   version "1.0.2"
@@ -3909,8 +3909,9 @@ neo-async@2.6.1, neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-"new-element@github:azer/new-element":
+new-element@azer/new-element:
   version "1.0.0"
+  uid "2e2764fb029451301cc09f752f7f8c489fa04d6e"
   resolved "https://codeload.github.com/azer/new-element/tar.gz/2e2764fb029451301cc09f752f7f8c489fa04d6e"
   dependencies:
     domify "~1.0.0"
@@ -5038,8 +5039,9 @@ repeat-string@^1.6.1:
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
 
-"require-sdk@github:azer/require-sdk":
+require-sdk@azer/require-sdk:
   version "0.0.2"
+  uid "23ca5f4d73714bb79357597e1c789c729cee50d6"
   resolved "https://codeload.github.com/azer/require-sdk/tar.gz/23ca5f4d73714bb79357597e1c789c729cee50d6"
   dependencies:
     load-script "*"
